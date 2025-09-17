@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Balisage 2025</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/white-contrast.css" id="theme">
+    <style>
+      section *.slide_heading {
+        font-size: .75em;
+        margin: 0.67em 0;
+        border-bottom: thin solid black;
+        text-align: left;
+      }
+    </style>
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h2>(Re)building the TEI Website:</h1>
+          <h3>A Bit of History and New Directions</h2>
+          <p>Hugh Cayless, Duke University Libraries</p>
+          <img src="Balisage_2025_Presentation/TEI_Logo_Horizontal.svg" alt="TEI Logo" height="200">
+          <img src="Balisage_2025_Presentation/reading_devil.webp" alt="Duke University Libraries" width="200">
+          <aside class="notes">
+            I should note at the outset that the process of researching and writing this talk has been, for me, like traversing a minefield. At every step there are bits of interesting historical diversion that will utterly destroy my attention. Every five minutes I stumble across something and go "Oh! I need to read that!" And then it's an hour later, and I've done no work at all. Makes it tricky to construct a narrative…
+          </aside>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## Background
+            * The Text Encoding Initiative (TEI) develops and promulgates a set of guidelines for 
+              the markup of cultural heritage texts for research purposes.
+            * Began in 1987 with a conference at Vassar, so pre-web. Adopted SGML as its base format.
+            <aside class="notes">
+            The TEI's origins go back nearly 40 years.
+            </aside>
+          </textarea>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## Background
+            * The Association for Computing in the Humanities sponsored 
+              the first meeting and was subsequently joined by the Association for Literary and 
+              Linguistic Computing and the Association for Computational Linguistics.
+            * The TEI Consortium was officially formed in 1999.
+            * Bits were on the web before that—this is not the whole history.
+            <aside class="notes">
+              This is not a complete history of the TEI on the web, The University of Virginia, for example, had the Guidelines on the web in the mid-90s. It is really an incomplete history of the website of the TEI Consortium, which was formed in 1999. Before that, it was a joint project of the ACH, ALLC, and ACL.
+            </aside>
+          </textarea>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## The Early Years
+          </textarea>
+        </section>
+        <section>
+          <h2 class="slide_heading">The TEI website pre-consortium (1998)</h2>
+          <iframe src="Balisage_2025_presentation/www-tei.uic.edu_1998_01_27.html" 
+                  style="width: 98vw; height: 62vh; border: none"></iframe>
+          <aside class="notes">
+            We can get a glimpse of the pre-consortial years. This is the website for the TEI from the University of Illinois at Chicago, run by Wendy Plotkin and Michael Sperberg-McQueen (who you'll note was tei at uic.edu). This appears to have been just handcrafted HTML.
+          </aside>
+        </section>
+        <section>
+            <h2><em>In memoriam</em> Michael Sperberg-McQueen</h2>
+            <img src="Balisage_2025_Presentation/CMSMcQ.png" alt="Michael Sperberg-McQueen" height="450">
+            <aside class="notes">
+              I need to pause here and, just as we did at the beginning of the conference, remember Michael. He was instrumental to the TEI in its early years, including being the co-editor of the TEI Guidelines and editor in chief of the TEI from 1988 to 2000. In a very Michael-like move, he then stepped away so that he wouldn't dominate the ensuing development of the standard and it could survive on its own.
+              </aside>
+        </section>
+				<section>
+          <h2 class="slide_heading">The website at tei-c.org (1999)</h2>
+          <iframe src="Balisage_2025_presentation/www.tei-c.org_1999_10_09.html" 
+                  style="width: 98vw; height: 62vh; border: none;"></iframe>
+          <aside class="notes">
+            Here we have the very basic first TEIC homepage, still handcrafted as far as I can tell. They gave everyone's phone number. It's so cute! The idea was that sponsor institutions would take turns as hosts, and it started at UVA and later moved to Oxford.
+          </aside>
+        </section>
+        <section>
+          <h2 class="slide_heading">The website at tei-c.org (2001)</h2>
+          <iframe src="Balisage_2025_presentation/www.tei-c.org_2001_09_24.html" 
+                  style="width: 98vw; height: 62vh; border: none;"></iframe>
+          <aside class="notes">
+            Next we have a revision of the site from 2001. This one contains the comment: "THIS FILE IS GENERATED FROM AN XML MASTER.  DO NOT EDIT" so we've entered the era when the TEI site is being written in TEI. It's a more sophisticated site, using tables for formatting as was the style at the time.
+          </aside>
+        </section>
+        <section>
+          <h2 class="slide_heading">Cocoon! (2005)</h2>
+          <iframe src="Balisage_2025_presentation/www.tei-c.org_2005_03_24.html" 
+                  style="width: 98vw; height: 62vh; border: none;"></iframe>
+          <aside class="notes">
+            Now, exciting! We've got a new design again, and it's being "dynamically rendered using Apache Cocoon <em>where possible</em>." Put a pin in that. Why am I excited about Cocoon? It was a rather neat XML-based content publishing platform that worked by letting you define processing pipelines mapped to URL patterns. I built a bunch of sites with it. It was loads of fun, but a bit hard to master until you got your head wrapped around it. It's the mid-2000s and we are fully in XML is Like Violence World.
+          </aside>
+        </section>
+        <section>
+          <h2 class="slide_heading">It didn't always work out...</h2>
+          <iframe src="Balisage_2025_presentation/www.tei-c.org_Guidelines2_error.html" 
+                  style="width: 98vw; height: 62vh; border: none;"></iframe>
+          <aside class="notes">
+            Also, erm. Well. I do wonder whether this represented an attempt to dynamically process the Guidelines XML, which would have been a tricky proposition for structural reasons.
+          </aside>  
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## Send in the Content Management Systems
+          </textarea>
+        </section>
+        <section>
+          <h2 class="slide_heading">2007: the OpenCMS years begin</h2>
+          <iframe src="Balisage_2025_presentation/www.tei-c.org_index.xml_2007_12_24.html" 
+                  style="width: 98vw; height: 62vh; border: none;"></iframe>
+          <aside class="notes">
+            In 2007, the site moved from being hosted by sponsor institutions to the Alliance of Digital Humanities Organizations, which is an umbrella group for the national and regional DH orgs. OpenCMS is a Java-based CMS and it was mildly hacked to process TEI sources into HTML. The site would remain on OpenCMS for about a decade. Much too long, really. Source editing was managed via a Java Applet, which became gradually harder and harder to use. I was TEI Council chair at the time, and I think I was the only person who could still coax it into running by the end. Kevin Hawkins, who was responsible for the TEI web infrastructure at the time, initiated a process for migrating to another CMS: WordPress.
+          </aside>
+        </section>
+        <section>
+          <h2 class="slide_heading">mid-2018: The move to WordPress</h2>
+          <img src="Balisage_2025_presentation/www.tei-c.org_2018_06_23.png" alt="The TEI site in WordPress">
+          <aside class="notes">
+              The migration took place in mid-2018. It was a bit of a mess for a while, as the layout of this screenshot indicates. It looked very much like the old site, thanks to a custom theme. The sources were migrated from TEI to HTML so that they could be edited using the WordPress WYSIWYG editor with, shall we say, mixed results. The plan behind the move was that we would get all of the content over from the old site, changing things as little as possible, and then in a phase 2, work on redesign and rearchitecture.
+            </aside>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## February 8th, 2019: Disaster
+            * The ADHO infrastructure hosting the TEI website suffered a disk failure.
+            * Our then web manager, Luis Meneses, was able to manage a partial restoration
+              of the site, hosted (temporarily) at the University of Victoria, BC.
+            * It took a while to get everything back to normal.
+            <aside class="notes">
+              The next year was a bit of an <em>annus horribilis</em>. ADHO had a catastrophic disk failure. There were backups, mercifully, but restoration of ADHO services took a long time and we ended up moving nearly everything over to the University of Victoria, simply because our then web admin, Luis Meneses, had the capacity to do that work. He saved our bacon.
+            </aside>
+          </textarea>            
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## 2019: More Churn
+            * The hosting at UVIC was always intended to be temporary; we had been discussing a 
+              move to Huma-Num, the French computing infrastructure for the Humanities and Social Sciences.
+            * In June, we learned that Compute Canada would shut down, so that move became a bit more urgent.
+            * The transfer to Huma-Num was completed on August 27th, 2019.
+            <aside class="notes">
+              Then we had to move again. Hopefully to a stable home. We are now housed by Huma-Num, the French government-sponsored computing infrastructure for Humanities and Social Sciences. We have been there ever since. Then there was that whole pandemic thing. All of this may well have contributed to the website reformation project never really getting up to speed, even though attempts were made. There never was a phase 2.
+            </aside>
+          </textarea>
+        </section>
+        <section>
+          <h2 class="slide_heading">2019–2024: WordPress grinds on</h2>
+          <iframe src="Balisage_2025_presentation/tei-c.org_2020_02_28.html" 
+                  style="width: 98vw; height: 62vh; border: none;"></iframe>
+          <aside class="notes">
+            I could rant for a long time about things I hated about WordPress. It's meant to make it easy for editors to work on website content, but in fact there was quite a bit of friction. You would often have to drop into HTML view in the editor to clean up files that had been migrated from TEI, for example. The markup it produces is a mess. It and its plugins have to be kept up to date as new and exciting exploits become available all the time. I was constantly paranoid it would get hacked. The site architecture was a dumpster fire. In 2023 I proposed a project to migrate it to a static site. I said it would take me about a year.
+          </aside>
+        </section>
+        <section>
+          <h2 class="slide_heading">September 3rd, 2024: New Website!</h2>
+          <iframe src="Balisage_2025_presentation/tei-c.org_2024_09_04.html" 
+                  style="width: 98vw; height: 62vh; border: none;"></iframe>
+          <aside class="notes">
+            Either I've finally gotten good at estimating project timelines or some sort of miracle occurred, but in a year, we released the new website. It's (I think) nicer looking, responsive, and vastly harder to hack.
+          </aside>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## So here we are
+            * The current TEI website is a static site. <!-- .element: class="fragment" -->
+            * Built using Eleventy <!-- .element: class="fragment" --> (<https://www.11ty.dev/>) 
+            * Based on a GitHub repository <!-- .element: class="fragment" --> (<https://github.com/TEIC/website>) 
+            <aside class="notes">
+              So here we are. The site gets built using a static site generator called Eleventy. The sources are hosted in a GitHub repository. GitHub is essentially serving the CMS functions of authenticating editors and permitting source editing, which of course can even be done online. Most of the sources are in Markdown, so we don't need a WYSIWYG editor, though if a user wants to work with one on their desktop, they can. GitHub even gives you a preview for Markdown files. We commit and push or make pull requests instead of saving and publishing in WordPress. 
+            </aside>
+          </textarea>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## The lifecycle
+            ![TEI website lifecycle](Balisage_2025_presentation/lifecycle.svg)
+          </textarea>
+        </section>
+        <section>
+            <h2>So what <em>wasn't</em> managed by the CMS?</h2>
+            <ul>
+                <li>The TEI Guidelines</li>
+                <li class="fragment strike">The Vault</li>
+                <li>The Documentation repository</li>
+            </ul>
+            <aside class="notes">
+              Recall that I pointed out the remark on the Cocoon version of the site that the site was rendered with Cocoon <em>where possible</em>. Where wasn't it possible? (transition) Well for starters The Vault has been a part of the TEI website almost from the outset. It was a bit more organized in the beginning, but at some point we gave up and now it's just straight HTML and other things. And I'm content to leave it that way for now.
+            </aside>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## The TEI Guidelines
+            * Separate build process.
+            * But has to integrate with the website.
+            <aside class="notes">
+              The TEI Guidelines are a very complex set of documents, written in TEI, consisting of chapters of running prose, with examples and specification pages that define individual elements, attributes, content models, etc. They also have multiple build targets—HTML, PDF, and EPUB as well as the TEI ODDs and schemas. So it's—I believe—always had a separate build process and output from the website. In the current, P5, era, there are XSLT stylesheets and scripts that build the Guidelines as HTML and do all the other release things involved, so the Guidelines are a separate thing They're released about twice a year—so not on the same cycle as the website, which is deployed continuously. But they are integrated with the website—meaning they share the same menus, footers, etc.
+            </aside>
+          </textarea>
+        </section>
+        <section>
+          <h2>What to do with the menus?</h2>
+          <p class="fragment">Used in the website build process and for dynamic menu generation in the Guidelines.</p>
+          <pre class="fragment"><code data-trim class="language-json">
+[
+  {
+    "id": "guidelines",
+    "en": {
+      "name": "Guidelines",
+      "items": [
+        {
+          "name": "Current Guidelines",
+          "url": "/release/doc/tei-p5-doc/en/html/index.html"
+        },
+        {
+          "name": "Older Versions",
+          "url": "/guidelines/p5/"
+        },
+        {
+          "name": "Customization",
+          "url": "/guidelines/customization/"
+        },
+        {
+          "name": "Licensing & Citation",
+          "url": "/guidelines/licensing-and-citation/"
+        },
+        {
+          "name": "TEI @ GitHub",
+          "url": "https://github.com/TEIC/TEI"
+        },
+        {
+          "name": "About the Guidelines",
+          "url": "/guidelines/"}
+      ]
+    },
+    "es": {
+      "name": "Directrices",
+      "items": [
+        {
+          "name": "Directrices actuales",
+          "url": "/release/doc/tei-p5-doc/es/html/index.html"
+        },
+        {
+          "name": "Versiones anteriores (Inglés)",
+          "url": "/guidelines/p5/"
+        },
+        {
+          "name": "Personalización (Inglés)",
+          "url": "/guidelines/customization/"
+        },
+        {
+          "name": "Licencias y citación (Inglés)",
+          "url": "/guidelines/licensing-and-citation/"
+        },
+        {
+          "name": "TEI en GitHub",
+          "url": "https://github.com/TEIC/TEI"
+        },
+        {
+          "name": "Acerca de las directrices",
+          "url": "/es/directrices/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "activities",
+    "en": {
+      "name": "Activities",
+      "items": [
+        {
+          "name": "Summary",
+          "url": "/activities/"
+        },
+        {
+          "name": "Annual Meetings",
+          "url": "https://members.tei-c.org/Events/meetings"
+        },
+        {
+          "name": "Technical Council",
+          "url": "/activities/council/"
+        },
+        {
+          "name": "Board",
+          "url": "/activities/board/"
+        },
+        {
+          "name": "Community",
+          "url": "/activities/community/"
+        },
+        {
+          "name": "Workgroups",
+          "url": "/activities/workgroups/"
+        },
+        {
+          "name": "SIGs",
+          "url": "/activities/sig/"
+        },
+        {
+          "name": "Infrastructure Group",
+          "url": "/activities/infrastructure-group/"
+        },
+        {
+          "name": "Journal of the TEI",
+          "url": "https://journals.openedition.org/jtei"
+        }
+      ]
+    },
+    "es": {
+      "name": "Actividades",
+      "items": [
+        {
+          "name": "Resumen",
+          "url": "/es/actividades/"
+        },
+        {
+          "name": "Reuniones anuales",
+          "url": "https://members.tei-c.org/Events/meetings"
+        },
+        {
+          "name": "Consejo técnico (Inglés)",
+          "url": "/activities/council/"
+        },
+        {
+          "name": "Junta directiva (Inglés)",
+          "url": "/activities/board/"
+        },
+        {
+          "name": "Comunidad (Inglés)",
+          "url": "/activities/community/"
+        },
+        {
+          "name": "Grupos de trabajo (Inglés)",
+          "url": "/activities/workgroups/"
+        },
+        {
+          "name": "SIGs (Inglés)",
+          "url": "/activities/sig/"
+        },
+        {
+          "name": "Grupo de infraestructura (Inglés)",
+          "url": "/activities/infrastructure-group/"
+        },
+        {
+          "name": "Revista de la TEI",
+          "url": "https://journals.openedition.org/jtei"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tools",
+    "en": {
+      "name": "Tools",
+      "items": [
+        {
+          "name": "TEIGarage",
+          "url": "https://teigarage.tei-c.org/"
+        },
+        {
+          "name": "Roma",
+          "url": "https://roma.tei-c.org"
+        },
+        {
+          "name": "Roma Antiqua",
+          "url": "https://romaantiqua.tei-c.org"
+        },
+        {
+          "name": "Stylesheets",
+          "url": "https://github.com/TEIC/Stylesheets"
+        },
+        {
+          "name": "About TEI Tools",
+          "url": "/tools/"}
+      ]
+    },
+    "es": {
+      "name": "Herramientas",
+      "items": [
+        {
+          "name": "TEIGarage",
+          "url": "https://teigarage.tei-c.org/"
+        },
+        {
+          "name": "Roma",
+          "url": "https://roma.tei-c.org"
+        },
+        {
+          "name": "Roma Antiqua",
+          "url": "https://romaantiqua.tei-c.org"
+        },
+        {
+          "name": "Stylesheets",
+          "url": "https://github.com/TEIC/Stylesheets"
+        },
+        {
+          "name": "Acerca de las herramientas TEI (Inglés)",
+          "url": "/tools/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "members",
+    "en": {
+      "name": "Membership",
+      "items": [
+        {
+          "name": "Members' Site",
+          "url": "https://members.tei-c.org/"
+        },
+        {
+          "name": "How to Join",
+          "url": "https://members.tei-c.org/Join"
+        },
+        {
+          "name": "Meetings",
+          "url": "https://members.tei-c.org/Events/meetings"
+        }
+      ]
+    },
+    "es": {
+      "name": "Membresía",
+      "items": [
+        {
+          "name": "Sitio de miembros (Inglés)",
+          "url": "https://members.tei-c.org/"
+        },
+        {
+          "name": "Cómo unirse (Inglés)",
+          "url": "https://members.tei-c.org/Join"
+        },
+        {
+          "name": "Reuniones (Inglés)",
+          "url": "https://members.tei-c.org/Events/meetings"
+        }
+      ]
+    }
+  },
+  {
+    "id": "support",
+    "en": {
+      "name": "Support",
+      "items": [
+        {
+          "name": "Support",
+          "url": "/support/"
+        },
+        {
+          "name": "Learn the TEI",
+          "url": "/support/learn/"
+        },
+        {
+          "name": "TEI-L Mailing List",
+          "url": "/support/#tei-l"
+        },
+        {
+          "name": "Issues and Feature Requests",
+          "url": "https://github.com/TEIC/TEI/issues"
+        },
+        {
+          "name": "Funding Bids and the TEI-C",
+          "url": "/support/bids/"
+        }
+      ]
+    },
+    "es": {
+      "name": "Soporte",
+      "items": [
+        {
+          "name": "Soporte (Inglés)",
+          "url": "/support/"
+        },
+        {
+          "name": "Aprende TEI",
+          "url": "/es/soporte/aprende/"
+        },
+        {
+          "name": "Lista de correo TEI-L (Inglés)",
+          "url": "/support/#tei-l"
+        },
+        {
+          "name": "Problemas y solicitudes de características (Inglés)",
+          "url": "https://github.com/TEIC/TEI/issues"
+        },
+        {
+          "name": "Financiación y el TEI-C (Inglés)",
+          "url": "/support/bids/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "about",
+    "en": {
+      "name": "About",
+      "items": [
+        {
+          "name": "About the TEI",
+          "url": "/about/"
+        },
+        {
+          "name": "Goals and Mission",
+          "url": "/about/mission/"
+        },
+        {
+          "name": "Board of Directors",
+          "url": "/about/board-of-directors/"
+        },
+        {
+          "name": "Frequently Asked Questions",
+          "url": "/about/frequently-asked-questions/"
+        },
+        {
+          "name": "History",
+          "url": "/about/history/"
+        },
+        {
+          "name": "Vault",
+          "url": "/Vault/"
+        },
+        {
+          "name": "Contact",
+          "url": "/about/contact/"
+        }
+      ]
+    },
+    "es": {
+      "name": "Acerca de",
+      "items": [
+        {
+          "name": "Acerca de la TEI",
+          "url": "/es/acerca_de/"
+        },
+        {
+          "name": "Objetivos y misión (Inglés)",
+          "url": "/about/mission/"
+        },
+        {
+          "name": "Junta directiva (Inglés)",
+          "url": "/about/board-of-directors/"
+        },
+        {
+          "name": "Preguntas frecuentes (Inglés)",
+          "url": "/about/frequently-asked-questions/"
+        },
+        {
+          "name": "Historia (Inglés)",
+          "url": "/about/history/"
+        },
+        {
+          "name": "Vault",
+          "url": "/Vault/"
+        },
+        {
+          "name": "Contacto (Inglés)",
+          "url": "/about/contact/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "news",
+    "en": {
+      "name": "News", 
+      "url": "/news/"
+    },
+    "es": {
+      "name": "Noticias",
+      "url": "/news/"
+    }
+  }
+]
+
+          </code></pre>
+          <aside class="notes">
+            The biggest difficulty here is getting the site's menus to match what's presented in the Guidelines. With WordPress, we managed this with an API call and some Javascript, so we could get the structure of the menus in JSON and then build that into an HTML menu, and it would automatically reflect any menu changes. We can't have an API for a static site, but we can fake it by defining the menus in a JSON file and then using that in the website build and also making it available for the Guidelines display.
+          </aside>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## The Documentation Repository
+            * External: <https://github.com/TEIC/Documentation>
+            * TEI XML files
+            * Needs to be integrated with the website in a couple of places.
+            <aside class="notes">
+              And then there's the Documentation. Mainly this is a set of so-called "Working Papers" that the TEI Council maintains. These are written in TEI and there's no real appetite for changing that. So we want the build process for the site to process these into HTML. There are obviously lots of ways I could do this, but what we had been doing was use a JavaScript library Raff Viglianti and I wrote, called CETEIcean, which renders TEI (or other XML) in a web browser. Longtime Balisage attendees may recall earlier presentations of it.
+            </aside>
+          </textarea>
+        </section>
+        <section>
+          <h2>Solution, Part 1: Extend 11ty to support TEI XML files 🐳</h2>
+          <pre><code data-trim class="language-js">
+  eleventyConfig.addExtension("xml", {
+
+    getData: async function(inputPath) {
+      const file = fs.readFileSync(inputPath, 'utf8');
+      const jdom = new JSDOM(file, { contentType: "text/xml" });
+      if (!jdom.window.document.querySelector("TEI")) {
+        return;
+      }
+      return {
+        "title": jdom.window.document.querySelector("titleStmt > title").textContent,
+        "navkey": inputPath.replace(".*/", "").replace(".xml", ""),
+        "eleventyNavigation": {
+          parent: inputPath.includes("TCW") ? "Council" : "About",
+          key: inputPath,
+          title: jdom.window.document.querySelector("titleStmt > title").textContent
+        }
+      }
+    },
+
+    compile: async function(contents, inputPath) {
+      const jdom = new JSDOM(contents, { contentType: "text/xml" });
+      if (!jdom.window.document.querySelector("TEI")) {
+        return;
+      }
+      let cetei = new CETEI({ documentObject: jdom.window.document });
+      let doc = await cetei.domToHTML5(jdom.window.document);
+      return async (data) => {
+        return cetei.utilities.serializeHTML(doc, true);
+      };
+    }
+  });
+          </code></pre>
+          <aside class="notes">
+            CETEIcean can also be used to preprocess TEI into HTML with Custom Elements, which is what I have done here. All I had to do was register a new "Extension" with Eleventy. It's fairly trivial, though I would like to work on making it more efficient, because I'm that sort of maniac.
+          </aside>
+        </section>
+        <section>
+          <h2>Solution, Part 2: Pull in Documentation on Build</h2>
+          <pre><code data-trim class="language-yml">
+name: Build and Deploy TEI Website
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types: [update-documentation]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: 'recursive'
+      - name: Update submodule
+        run: git submodule update --remote src/documentation/Documentation
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+      - name: Build
+        run: |
+          npm install
+          npx @11ty/eleventy
+      - name: Deploy
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.TEIWEB_KEY }}
+      - run: |
+          ssh -o StrictHostKeyChecking=accept-new ${{ secrets.TEIWEB_USER }}@${{ secrets.TEIWEB_HOST }} uptime
+          rsync -avz -e ssh --delete dist/ ${{ secrets.TEIWEB_USER }}@${{ secrets.TEIWEB_HOST }}:${{ secrets.TEIWEB_PATH }}
+          </code></pre>
+          <aside class="notes">
+            The Documentation repo is mounted as a submodule in the website repo, and it gets refreshed any time a build runs. Builds are triggered either by a push into the main branch or by an update to the Documentation repo. This is the GitHub Action that manages the process.
+          </aside>
+        </section>
+        <section>
+            <h2>Is this better?</h2>
+            <ul>
+              <li class="fragment">Well, it's better for <em>me</em>.</li>
+              <li class="fragment">It seems better for our users.</li>
+              <li class="fragment">It seems likely to better support internationalization.</li>
+              <li class="fragment">It's much more accessible.</li>
+            </ul>
+            <aside class="notes">
+              So, have things improved? (transition) It's certainly better for me! (transition) The frequency of updates by people who aren't me has roughly doubled. Why on Earth would they like editing a GitHub repo more than using WordPress? Well, these people are nerds. This is a far more understandable and congenial editing environment for them! There is less inertia. (transition) We have begun something which we couldn't even really get started on in the old website, which is adding info in languages other than English. (transition) The accessibility story for the website is much, much better.
+            </aside>
+        </section>
+        <section>
+          <h2>Future Work</h2>
+          <ul>
+            <li class="fragment">Make the Guidelines more accessible.</li>
+            <li class="fragment">Continue to add more language support.</li>
+            <li class="fragment">Selectively pull over content from the old site and fix broken links.</li>
+            <li class="fragment">Incrementally improve.</li>
+          </ul>
+          <aside class="notes">
+            What's left to be done? Loads. (transition) The Guidelines build process produces HTML with lots of accessibility problems. That needs fixing. (transition) We should add more language support. We've made a start with Spanish, and I know there's interest in Japanese. (transition) I deliberately did not migrate all of the content from the old site, preferring to do this incrementally, and thereby prune some of the cruft from the old site. Basically, wait for people to complain. People love to complain. I have a Python program I can use to pull data out of an XML content dump from the old site by URL and convert it to Markdown, which works quite well. (transition) I mentioned that there was less inertia involved in developing for the site now. I'm not in a CMS-shaped straitjacket anymore. It's nice. I can solve one problem at a time.
+          </aside>
+        </section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## Thanks! Questions?
+
+            <https://tei-c.org>
+
+            <https://github.com/TEIC/website>
+
+            <img src="Balisage_2025_Presentation/TEI_Logo_Horizontal.svg" alt="TEI Logo" height="200">
+          <img src="Balisage_2025_Presentation/reading_devil.webp" alt="Duke University Libraries" width="200">
+          </textarea>
+        </section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+        slideNumber: "c/t"
+			});
+		</script>
+	</body>
+</html>

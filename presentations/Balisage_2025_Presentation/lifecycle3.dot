@@ -1,0 +1,38 @@
+digraph lifecycle {
+	graph [bb="0,0,409,396",
+		rankdir=LR
+	];
+	node [label="\N",
+		shape=box
+	];
+	A	[height=0.5,
+		label="Handcrafted static HTML",
+		pos="204.5,18",
+		width=2.191];
+	B	[height=0.5,
+		label="Static HTML generated from a XML (TEI) Masters",
+		pos="204.5,90",
+		width=4.1701];
+	A -> B	[pos="e,204.5,71.587 204.5,36.169 204.5,43.446 204.5,52.024 204.5,60.168"];
+	C	[height=0.5,
+		label="Dynamically processed  HTML from XML masters",
+		pos="204.5,162",
+		width=4.1597];
+	B -> C	[pos="e,204.5,143.59 204.5,108.17 204.5,115.45 204.5,124.02 204.5,132.17"];
+	D	[height=0.5,
+		label="Dynamically processed HTML from XML masters managed by a CMS",
+		pos="204.5,234",
+		width=5.6806];
+	C -> D	[pos="e,204.5,215.59 204.5,180.17 204.5,187.45 204.5,196.02 204.5,204.17"];
+	E	[height=0.5,
+		label="HTML tag soup managed by a CMS",
+		pos="204.5,306",
+		width=3.0139];
+	D -> E	[pos="e,204.5,287.59 204.5,252.17 204.5,259.45 204.5,268.02 204.5,276.17"];
+	F	[height=0.5,
+		label="Static HTML generated from Markdown and XML Masters",
+		pos="204.5,378",
+		width=4.7743];
+	E -> F	[pos="e,204.5,359.59 204.5,324.17 204.5,331.45 204.5,340.02 204.5,348.17"];
+	F -> B	[pos="e,204.5,108.3 204.5,359.55 204.5,310.88 204.5,178.73 204.5,119.46"];
+}

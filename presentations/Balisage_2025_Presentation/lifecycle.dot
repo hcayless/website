@@ -1,0 +1,16 @@
+digraph lifecycle {
+  rankdir=LR;
+  node [shape=box];
+  A [label="Handcrafted static HTML"];
+  B [label="Static HTML generated from XML (TEI) Masters"];
+  C [label="Dynamically processed  HTML from XML masters"];
+  D [label="Dynamically processed HTML from XML masters managed by a CMS"];
+  E [label="HTML tag soup managed by a CMS"];
+  F [label="Static HTML generated from Markdown and XML Masters"];
+  A -> B;
+  B -> C;
+  C -> D;
+  D -> E;
+  E -> F;
+  F -> B;
+}

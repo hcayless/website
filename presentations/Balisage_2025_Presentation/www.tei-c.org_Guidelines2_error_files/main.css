@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:error="http://apache.org/cocoon/error/2.1">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Resource not found</title>
+<link rel="stylesheet" type="text/css" href="/styles/main.css">
+<style>
+          h1 { color: #336699; text-align: left; margin: 0px 0px 30px 0px; padding: 0px; border-width: 0px 0px 1px 0px; border-style: solid; border-color: #336699;}
+          p.message { padding: 10px 30px 10px 30px; font-weight: bold; font-size: 130%; border-width: 1px; border-style: dashed; border-color: #336699; }
+          p.description { padding: 10px 30px 20px 30px; border-width: 0px 0px 1px 0px; border-style: solid; border-color: #336699;}
+          p.topped { padding-top: 10px; border-width: 1px 0px 0px 0px; border-style: solid; border-color: #336699; }
+          pre { font-size: 120%; }
+        </style>
+<script type="text/javascript" src="/scripts/main.js"></script>
+</head>
+<body onload="toggle('full exception chain stacktrace');toggle('stacktrace');">
+<h1>Resource not found</h1>
+<p class="message">/home12/tei/web/styles/main.css (No such file or directory)</p>
+<p class="description">org.apache.cocoon.ResourceNotFoundException: Error during resolving of the input stream: org.apache.excalibur.source.SourceNotFoundException: file:/home12/tei/web/styles/main.css doesn't exist.</p>
+<p class="extra">
+<span class="description">cause:&nbsp;</span>java.io.FileNotFoundException: /home12/tei/web/styles/main.css (No such file or directory)</p>
+<p class="stacktrace">
+<span class="description">full exception chain stacktrace</span><span onclick="toggle('full exception chain stacktrace')" id="full exception chain stacktrace-switch" class="switch">[hide]</span>
+<pre id="full exception chain stacktrace">org.apache.cocoon.ResourceNotFoundException: Error during resolving of the input stream: org.apache.excalibur.source.SourceNotFoundException: file:/home12/tei/web/styles/main.css doesn't exist.
+	at org.apache.cocoon.components.source.SourceUtil.handle(Unknown Source)
+	at org.apache.cocoon.reading.ResourceReader.generate(Unknown Source)
+	at org.apache.cocoon.components.pipeline.impl.AbstractCachingProcessingPipeline.processReader(Unknown Source)
+	at org.apache.cocoon.components.pipeline.AbstractProcessingPipeline.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.ReadNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PreparableMatchNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelineNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelinesNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.TreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.MountNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PreparableMatchNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelineNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelinesNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.TreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.Cocoon.process(Unknown Source)
+	at org.apache.cocoon.servlet.CocoonServlet.service(Unknown Source)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:173)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:213)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:178)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:126)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:105)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:107)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:148)
+	at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:307)
+	at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:385)
+	at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:748)
+	at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:678)
+	at org.apache.jk.common.SocketConnection.runIt(ChannelSocket.java:871)
+	at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:684)
+	at java.lang.Thread.run(Thread.java:595)
+Caused by: org.apache.excalibur.source.SourceNotFoundException: file:/home12/tei/web/styles/main.css doesn't exist.
+	at org.apache.excalibur.source.impl.FileSource.getInputStream(FileSource.java:150)
+	... 41 more
+Caused by: java.io.FileNotFoundException: /home12/tei/web/styles/main.css (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
+	at org.apache.excalibur.source.impl.FileSource.getInputStream(FileSource.java:146)
+	... 41 more
+org.apache.excalibur.source.SourceNotFoundException: file:/home12/tei/web/styles/main.css doesn't exist.
+	at org.apache.excalibur.source.impl.FileSource.getInputStream(FileSource.java:150)
+	at org.apache.cocoon.reading.ResourceReader.generate(Unknown Source)
+	at org.apache.cocoon.components.pipeline.impl.AbstractCachingProcessingPipeline.processReader(Unknown Source)
+	at org.apache.cocoon.components.pipeline.AbstractProcessingPipeline.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.ReadNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PreparableMatchNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelineNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelinesNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.TreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.MountNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PreparableMatchNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelineNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelinesNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.TreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.Cocoon.process(Unknown Source)
+	at org.apache.cocoon.servlet.CocoonServlet.service(Unknown Source)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:173)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:213)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:178)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:126)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:105)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:107)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:148)
+	at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:307)
+	at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:385)
+	at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:748)
+	at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:678)
+	at org.apache.jk.common.SocketConnection.runIt(ChannelSocket.java:871)
+	at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:684)
+	at java.lang.Thread.run(Thread.java:595)
+Caused by: java.io.FileNotFoundException: /home12/tei/web/styles/main.css (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
+	at org.apache.excalibur.source.impl.FileSource.getInputStream(FileSource.java:146)
+	... 41 more
+</pre>
+</p>
+<p class="stacktrace">
+<span class="description">stacktrace</span><span onclick="toggle('stacktrace')" id="stacktrace-switch" class="switch">[hide]</span>
+<pre id="stacktrace">java.io.FileNotFoundException: /home12/tei/web/styles/main.css (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
+	at org.apache.excalibur.source.impl.FileSource.getInputStream(FileSource.java:146)
+	at org.apache.cocoon.reading.ResourceReader.generate(Unknown Source)
+	at org.apache.cocoon.components.pipeline.impl.AbstractCachingProcessingPipeline.processReader(Unknown Source)
+	at org.apache.cocoon.components.pipeline.AbstractProcessingPipeline.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.ReadNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PreparableMatchNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelineNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelinesNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.TreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.MountNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PreparableMatchNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelineNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.AbstractParentProcessingNode.invokeNodes(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.sitemap.PipelinesNode.invoke(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.ConcreteTreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.components.treeprocessor.TreeProcessor.process(Unknown Source)
+	at org.apache.cocoon.Cocoon.process(Unknown Source)
+	at org.apache.cocoon.servlet.CocoonServlet.service(Unknown Source)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:173)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:213)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:178)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:126)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:105)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:107)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:148)
+	at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:307)
+	at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:385)
+	at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:748)
+	at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:678)
+	at org.apache.jk.common.SocketConnection.runIt(ChannelSocket.java:871)
+	at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:684)
+	at java.lang.Thread.run(Thread.java:595)
+</pre>
+</p>
+<p class="topped">
+          If you need help and this information is not enough, you
+          are invited to read the
+          <a href="http://cocoon.apache.org/2.1/faq/">Cocoon FAQ</a>.<br>
+          If you still don't find the answers you need,
+          can send a mail to the
+          <a href="http://cocoon.apache.org/community/mail-lists.html">
+          Cocoon mailing lists</a>,
+          remembering to:
+        </p>
+<ul>
+<li>specify the version of Cocoon you're using, or we'll assume that you
+              are talking about the latest released version;</li>
+<li>specify the platform-operating system-version-servlet container version;</li>
+<li>send any pertinent error message;</li>
+<li>send pertinent log snippets;</li>
+<li>send pertinent sitemap snippets;</li>
+<li>send pertinent parts of the page that give you problems.</li>
+</ul>
+<p>
+          For more detailed technical information, take a look at the log
+          files in the log directory of Cocoon, which is placed by default in
+          the <code>WEB-INF/logs/</code> folder of your cocoon webapp context.<br>
+          If the logs don't give you enough information, you might want to increase the
+          log level by changing the Logging configuration which is by default the
+          <code>WEB-INF/logkit.xconf</code> file.
+        </p>
+<p>
+          If you think you found a bug, please report it to
+          <a href="http://issues.apache.org/bugzilla/">Apache's Bugzilla</a>;
+          a message will automatically be sent to the developer mailing list and you'll
+          be kept in contact automatically with the further progress on that bug.
+        </p>
+<p>
+          Thanks, and sorry for the trouble if this is our fault.
+        </p>
+<p class="topped">
+          The <a href="http://cocoon.apache.org/">Apache Cocoon</a> Project
+        </p>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 04:11:09 May 02, 2006 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:26:27 Aug 03, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.508
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.009
+  esindex: 0.011
+  cdx.remote: 45.63
+  LoadShardBlock: 650.77 (3)
+  PetaboxLoader3.resolve: 654.231 (4)
+  PetaboxLoader3.datanode: 120.197 (4)
+  load_resource: 155.52
+-->

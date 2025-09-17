@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>TEI 2025</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/white-contrast.css" id="theme">
+    <style>
+      blockquote {
+        font-size: .75em;
+        text-align: left;
+        width: 55vw !important;
+        margin: 0 auto !important;
+      }
+      section {
+        font-family: "Noto Serif", serif;
+      }
+      h2.small {
+        font-size: 1.5em;
+      }
+      section *.slide_heading {
+        font-size: .75em;
+        margin: 0.67em 0;
+        border-bottom: thin solid black;
+        text-align: left;
+      }
+      pre code.serif, pre code.text {
+        font-family: "Noto Mono", monospace;
+        font-size: 1.25em;
+        line-height: 1.5;
+      }
+      code.serif {
+        font-family: "Noto Serif", serif;
+        font-size: 1.25em;
+        line-height: 1.5;
+      }
+      p.fragment.current-visible {
+        display: none;
+      }
+      p.fragment.current-visible.current-fragment {
+        display: block;
+      }
+      .fragment.border {
+        border: none;
+      }
+      .fragment.border.current-fragment {
+        border: 1px solid black;
+      }
+
+    </style>
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h2>The TEI Critical Apparatus at 30-something</h1>
+          <h3>Where do we go from here?</h2>
+          <p>Hugh Cayless, Duke University Libraries</p>
+          <img src="TEI_2025/TEI_Logo_Horizontal.svg" alt="TEI Logo" height="200">
+          <img src="TEI_2025/reading_devil.webp" alt="Duke University Libraries" width="200">
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Background
+            * The Critical Apparatus chapter (TC) first appeared as part of P3 in 1994.
+              * It was present and debated in the P1 draft, however.
+            * Textual criticism has a long and involved history, but the use of markup to actually 
+              model variation was a major step forward.
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Background continued
+            * It had then most of the features it has now, the elements `app`, `lem`, `rdg`, `rdgGrp`, `wit`, 
+            `witDetail`, the associated `witStart`/`End` and `lacunaStart`/`End` as well as `witList` 
+            (now `listWit`) and `witness`. 
+            * Much of the prose and many of the examples in the chapter date back to P3. 
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Developments Since 1994
+            * Substantial changes were made in 2015 and 2020 to permit the modeling of structural variation.
+            * __But__ not much of the prose, nor examples, were updated. The changes were mostly additive.
+            * Why? This stuff is _hard_. It was written by scarily smart people. I was intimidated.
+          </textarea>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              ## Criticisms (of TC and TEI)
+              1. TEI is an inadequate representation of text, let alone textual variance (McGann, Buzetti to an extent).
+              2. Inline markup is evil (Schmidt, Nelson).
+              3. TEI Apparatus is too complex to be worth implementing (Mastronarde).
+              4. The TC chapter's conception of the critical apparatus is flawed (Damon).
+            </textarea>
+          </section>
+          <section data-markdown>
+          <textarea data-template>
+            ## Respond Thoughtfully
+            ```xml
+
+            <sp>
+              <stage>Say pissy things about #1 and #2.</stage>
+              ...
+            </sp>
+
+
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## #3 (Mastronarde)
+            > The apparatus criticus is another area in which I have decided not to use the more elaborate TEI mechanisms for apparatus criticus readings and variants, because in a project of this kind it seems to me that it would involve an unjustifiably large overhead of markup...This means that one will not be able to take my XML document and process it to produce a text that reflects the textual choices and errors of a particular witness...**Such a project would require more personnel and a much larger budget, and I do not think the benefit would be worth the cost, in comparison with the value of editing more scholia.** (https://euripidesscholia.org/)
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## #4 (Damon)
+            > I am troubled by what I
+              see as a trivialisation of the apparatus in the Text Encoding Initiative’s
+              __Guidelines for Electronic Text Encoding and Interchange__, which are meant
+              to foster standardisation in digital editions. The TEI Guidelines define
+              the apparatus as a repository of variants, and assert that ‘individual
+              readings are __the__ crucial elements in any critical apparatus of variants’.
+              For classical texts, at least, a proper critical apparatus is far more than
+              a repository of textual variants: it is a repository of __everything__ that an
+              editor judges necessary for a reader to understand why the text being
+              read is what it is. (Damon 2016, [10.11647/obp.0095](https://www.openbookpublishers.com/books/10.11647/obp.0095))
+          </textarea>
+        </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+            ## Damon’s Question
+            > Does (or could) the TEI critical apparatus module, despite its assertion that
+              ‘Individual readings are the crucial elements in any critical apparatus of
+              variants’, accommodate encoding that prioritises notes over witnesses?
+            </textarea>
+          </section>
+          <section>
+          <h2 class="small">Two Apparatuses (Ovid, <em>Metamorphoses</em> 9.749)</h2>
+          <pre style="width:60vw;margin: auto;"><code data-trim data-line-numbers="2" data-ln-start-from="748" class="language-text serif">
+            et pete quod fas est, et ama quod femina debes.
+            spes est quae capiat, spes est quae pascat amorem;
+            hanc tibi res adimit. non te custodia caro
+          </code></pre>
+          <p style="font-size: .75em; text-align: left; margin-left: 1.5em; margin-right: 1.5em;">
+            749 <em>del. Heinsius</em> capiat] faciat <em>(cf. 1. 469) χ, fort. recte</em> 
+            pascat <em>ϕ</em>: -it <em>Ω</em> amorem] -ntem <em>NU P</em> (Tarrant, OCT 2004)
+          </p>
+          <p style="font-size: .75em; text-align: left; margin-left: 1.5em; margin-right: 1.5em;">
+            749 captat – pascit <em>Korn</em> faciat – pascat <em>Faber</em> | amantem <em>ENUW</em> (Anderson, Teubner 1991)
+          </p>
+          <p style="font-size: .75em;"><em>It is hope that may seize love, it is hope that may nourish it.</em></p>
+        </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## Yes
+              ```xml
+              <app>
+                <lem>
+                    <l n="749">spes est quae 
+                      <app>
+                          <lem>capiat</lem>
+                          <rdg wit="#χ">faciat</rdg>
+                          <note>cf. 1. 469</note>
+                          <witDetail wit="#χ">fort. recte</witDetail>
+                      </app>, spes est quae 
+                      <app>
+                          <lem wit="#ϕ">pascat</lem>
+                          <rdg wit="#Ω">pascit</rdg>
+                      </app> 
+                      <app>
+                          <lem>amorem</lem>
+                          <rdg wit="#N #U #P">amantem</rdg>
+                      </app>;</l></lem>
+                <note>del. Heinsius</note>
+              </app>
+              ```
+              (Tarrant)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## What if that's a reading, not a note?
+              ```xml
+              <app>
+                <lem>
+                    <l n="749">spes est quae 
+                      <app>
+                          <lem>capiat</lem>
+                          <rdg wit="#χ">faciat</rdg>
+                          <note>cf. 1. 469</note>
+                          <witDetail wit="#χ">fort. recte</witDetail>
+                      </app>, spes est quae 
+                      <app>
+                          <lem wit="#ϕ">pascat</lem>
+                          <rdg wit="#Ω">pascit</rdg>
+                      </app> 
+                      <app>
+                          <lem>amorem</lem>
+                          <rdg wit="#N #U #P">amantem</rdg>
+                      </app>;</l></lem>
+                <rdg src="#Heinsius"/>
+                <witDetail wit="#Heinsius">del.</witDetail>
+              </app>
+              ```
+              (Tarrant)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## What about the other one?
+              ```xml
+              <l>spes est quae 
+                <app>
+                    <lem xml:id="lem_749_1" 
+                      require="#lem_749_2">capiat</lem>
+                    <rdg xml:id="Korn_749_1" 
+                      source="#Korn" require="#Korn_749_2">captat</rdg>
+                    <rdg xml:id="Faber_749_1" 
+                      source="#Faber" require="#lem_749_2">faciat</rdg>
+                </app>, spes est quae 
+                <app>
+                    <lem xml:id="lem_749_2" 
+                      exclude="#Korn_749_1">pascat</lem>
+                    <rdg xml:id="Korn_749_2" 
+                      require="#Korn_749_1">pascit</rdg>
+                </app> 
+                <app>
+                    <lem>amorem</lem>
+                    <rdg wit="#E #N #U #W">amantem</rdg>
+                </app>;
+              </l>
+              ```
+              (Anderson)
+            </textarea>
+          </section>
+        </section>        
+        <section data-markdown>
+          <textarea data-template>
+            ## How did we do?
+            * I think we can answer Damon's critique
+              * To be fair, it came out before the revisions to TC were complete.
+              * But TC _does_ say “the apparatus is a repository of variants.”
+            * Mastronarde’s objection is valid, though. This stuff _is_ complex.
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## More Problems
+            1. The examples. They’re hard to understand.
+            2. TC embodies text-critical theory, but doesn’t explain or even really gesture towards what theories it embodies.
+            3. The examples. There aren’t enough of them.
+          </textarea>
+        </section>
+        <section data-markdown style="font-size: 0.8em;">
+          <textarea data-template>
+            ## More Problems, cont’d
+            4. Structural vs. word / phrase level variation. Or, when is it ok to nest?
+            5. TC is actually very wedded to the base text model. Much more discussion of the multitext model and how it can be realised in TEI is needed.
+            6. What goes in an apparatus? Particularly in single-source editions, there are more things than witness variation that can show up. Graphetic variants (ancient diacritics, e.g.); normalization and correction; previous editions’ readings / apparatus.
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## He’s still going. Make it stop
+            7. What’s up with `witStart` / `witEnd` and `lacunaStart` / `lacunaEnd`?
+            8. `rdgGrp` could be explained better. I don’t like `@varSeq`.
+            9. What about other kinds of apparatus?
+            10. Do we still like the name?
+          </textarea>
+        </section>
+        <section>
+          <section>
+            <h2>Examples, etc. (1–3)</h2>
+            <p>Instead of drawing on Chaucer, the P1 discussion used a made-up example:</p>
+            <pre style="width: 60vw;"><code data-trim class="language-text">
+              TEXT A:   The quick brown fox jumped over the lazy dog.
+              TEXT B:   The       silver wolf jumped over the lazy dog.
+              TEXT C:   A   quick brown fox jumped over the lazy dog at noon.
+            </code></pre>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+            ## This is actually very good...
+            * It has the potential to illustrate several concepts—omission, nesting, addition.
+            * We could also deduce from it an archetype that said “The quick brown fox jumps over the lazy dog.”
+              * And that would let us talk about emendation and stemmatics, e.g.
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+            ## Nesting (4)
+            * Entries that happen to occur inside other entries are ok. E.g. line omission containing further variation.
+            * Cases of true overlap are less common than one might think, and can be successfully handled with dependency relations (`@require` and `@exclude`).
+            * What's _not_ ok is an apparatus entry having an apparatus entry.
+            </textarea>
+          </section>
+          <section>
+            <h2>Don’t do this</h2>
+            <pre><code data-trim data-line-numbers="1-2,9-10|3-8|2,5" class="language-xml">
+            <app>
+              <lem wit="#β #γ #κ #m #v">audienti</lem>
+              <rdg wit="#π #Ea" ana="#lexical">
+                <app>
+                  <lem wit="#Pp #Pu #Vo">auditui</lem>
+                  <rdg wit="#Ea" ana="#orthographical">auditi</rdg>
+                  <rdg wit="#Gu #Pz" ana="#morphological #J">auditu</rdg>
+                </app>
+              </rdg>
+            </app>
+            </code></pre>
+            <p>That second <code>app</code> should either be a <code>rdgGrp</code> or be flattened into a single <code>app</code>.</p>
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+            ## Multitexts (5)
+            * Parallel segmentation, single, and double endpoint attachment all assume a single text.
+              * Note that `app`s `@from` and `@to` attributes both take a single pointer value.
+            * What if you’ve transcribed all the witnesses and want to navigate between them?
+            * A multitext apparatus is solving an alignment problem.
+            </textarea>
+          </section>
+          <section>
+            <h2>Example: Frankenstein Variorum</h2>
+            <pre><code data-trim class="language-xml">
+              &lt;app xml:id="C02_app6" n="47">
+               &lt;rdgGrp xml:id="C02_app6_rg_empty">
+                  &lt;rdg wit="#fMS"/>
+               &lt;/rdgGrp>
+               &lt;rdgGrp n="['&lt;del&gt;for ever&lt;/del&gt;', 'constantly', 'visible', 'for more than half the year', ';']" xml:id="C02_app6_rg1">
+                  &lt;rdg wit="#fThomas">
+                     &lt;ptr target="https://raw.githubusercontent.com/FrankensteinVariorum/fv-data/master/2023-variorum-chapters/fThomas_vol_1_letter_i.xml#C02_app6-fThomas"/>
+                  &lt;/rdg>
+               &lt;/rdgGrp>
+               &lt;rdgGrp n="['for', 'ever', 'visible;']" xml:id="C02_app6_rg2">
+                  &lt;rdg wit="#f1818">
+                     &lt;ptr target="https://raw.githubusercontent.com/FrankensteinVariorum/fv-data/master/2023-variorum-chapters/f1818_vol_1_letter_i.xml#C02_app6-f1818"/>
+                  &lt;/rdg>
+                  &lt;rdg wit="#f1823">
+                     &lt;ptr target="https://raw.githubusercontent.com/FrankensteinVariorum/fv-data/master/2023-variorum-chapters/f1823_vol_1_letter_i.xml#C02_app6-f1823"/>
+                  &lt;/rdg>
+                  &lt;rdg wit="#f1831">
+                     &lt;ptr target="https://raw.githubusercontent.com/FrankensteinVariorum/fv-data/master/2023-variorum-chapters/f1831_letter_i.xml#C02_app6-f1831"/>
+                  &lt;/rdg>
+               &lt;/rdgGrp>
+             &lt;/app>
+            </code></pre>
+          </section>
+          <section>
+            <iframe src="https://frankensteinvariorum.org/viewer/1818/vol_1_letter_i" style="width: 98vw; height: 50vh; border: none;"></iframe>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What’s in an apparatus? (6)</h2>
+            <pre><code data-trim class="language-text serif" style="font-size: 0.9em;">
+            BGU 1.3
+            r
+                  ⳨ ἐν ὀνόματι τῆς ἁγίας καὶ ὁμοουσίου τριάδος
+                  καὶ τῆς δεσποίν(ης) ἡμῶν τῆς θεοτόκ(ου)
+                  καὶ πάντων τῶν ἁγίων βασιλείας τοῦ εὐσεβ(εστάτου)
+                  ἡμῶν δεσπό(του) Φλ(αουίου) Φωκᾶ τοῦ αἰων(ίου) Αὐγούστου
+              5   ἔτους τρίτου μετὰ τὴν ὑπατίαν τοῦ αὐτοῦ ἔτους
+                  δευτέρου Παῦνι ιγ τέλει ὀγδόης ἰν(δικτίωνος) ἐν Ἀρ(σινόῃ).
+                  ...
+              20  ἐπαύλεως, εἰ δὲ ἀφʼ ἧς εσεαυτοῦ ἐθελή-
+                  σῃς ἀναχωρῆσαι ἐκ τοῦ αὐτοῦ τόπου
+                  μηδέν σε λαβεῖν ὑπὲρ τῶν αὐτῶν
+                  ἀναλωμάτων τῶν γεναμένων παρὰ
+                  σοῦ ἐν τῇ αὐτῇ ἐπαύλει. [κ]υρία ἡ ὁμολο-
+              25  γία καὶ ἐπερ(ωτηθεὶς) ὡμ(ολόγησα). † (hand 3) Μηνᾶς ἐνοικι-
+                  ολόγος ὁ προκ(είμενος)· ς[  ̣  ̣]  ̣ μοι ἡ ὁμολογία
+                  ὡς πρόκ(ειται). Ἠλ̣ία̣ς Ἰ̣ωάνης
+                  ἔγραψα ὑ(πὲρ) αὐτοῦ   ̣  ̣  ̣[  ̣  ̣  ̣  ̣  ̣  ̣] monogr.
+                  (hand 4) ⳨ δι εμυ ελια   ̣  ̣  ̣[  ̣  ̣  ̣  ̣  ̣] 
+            </code></pre>
+            <p style="font-size: 0.8em; text-align: left;">r.5. l. ὑπατείαν | r.6. ϊν papyrus | r.9. αρσινοι’των papyrus | r.20. l. σεαυτοῦ | 
+              r.26. BL 1.7 :   ̣[  ̣  ̣  ̣] prev. ed. | r.27. BL 1.433 : Ἠλ̣  ̣  ̣  ̣[  ̣  ̣]ωανη̣σ prev. ed.
+            </p>
+          </section>
+          <section>
+            <h2>What’s in an apparatus? (6)</h2>
+            <p style="font-size: 0.8em; text-align: left;"><span class="custom fragment border" data-fragment-index="1">r.5. l. ὑπατείαν</span> | <span class="custom fragment border" data-fragment-index="2">r.6. ϊν papyrus</span> | r.9. αρσινοι’των papyrus | r.20. l. σεαυτοῦ | 
+              r.26. BL 1.7 :   ̣[  ̣  ̣  ̣] prev. ed. | <span class="custom fragment border" data-fragment-index="3">r.27. BL 1.433 : Ἠλ̣  ̣  ̣  ̣[  ̣  ̣]ωανη̣σ prev. ed.</span>
+            </p>
+            <p class="fragment current-visible" data-fragment-index="1" style="text-align: left;">Text has ὑπατίαν, read ὑπατείαν.</p>
+            <p class="fragment current-visible" data-fragment-index="2" style="text-align: left;">The iota in ἰν(δικτίωνος) has a diairesis mark.</p>
+            <p class="fragment current-visible" data-fragment-index="3" style="text-align: left;">Current edition has Ἠλ̣ία̣ς Ἰ̣ωάνης (from BL 1.433), previous edition had Ἠλ̣  ̣  ̣  ̣[  ̣  ̣]ωανη̣σ.</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Witness scope (7)</h2>
+            <p style="font-size: 0.75em;">Apparatuses from Anderson and Tarrant both note the witnesses in play on the page.</p>
+            <img src="TEI_2025/Ovid_Met_227.png" alt="Anderson's Metamorphoses" style="width: 40vw; border: 1px solid black; margin: auto;">
+            <br>
+            <img src="TEI_2025/Ovid_Met_280_Tarrant.png" alt="Tarrant's Metamorphoses" style="width: 40vw; border: 1px solid black; margin: auto;">
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+            ## Witness scope (7)
+            * Useful to know what witnesses apply at any given point (not least for interpreting the apparatus sigla).
+            * `witStart`, `witEnd`, `lacunaStart`, and `lacunaEnd` could theoretically be used to compute witness scope.
+              * BUT, they are only available within `lem` or `rdg` elements. Note that print apparatuses  do not often mark witness scope in entries.
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Reading Groups (8)</h2>
+            <pre><code data-trim class="language-xml">
+              <app type="substantive">
+                <rdgGrp type="subvariants">
+                  <lem wit="#El #Hg">Experience</lem>
+                  <rdg wit="#Ha4">Experiens</rdg>
+                </rdgGrp>
+                <rdgGrp type="sequence">
+                  <rdgGrp varSeq="1" type="subvariants">
+                  <lem wit="#Cp #Ld1">Experiment</lem>
+                  <rdg wit="#La">Ex<g ref="#per"/>iment</rdg>
+                  </rdgGrp>
+                  <rdgGrp varSeq="2"
+                  cause="abbreviation_loss">
+                  <lem resp="#ed2013">Eriment</lem>
+                  <rdg wit="#Ra2">Eryment</rdg>
+                  </rdgGrp>
+                </rdgGrp>
+                </app>
+            </code></pre>
+            <p style="font-size: 0.75em;">from https://tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPSU-egXML-pb</p>
+          </section>
+          <section>
+            <h2 class="small">What would a print apparatus for this look like?</h2>
+            <p style="text-align: left;">Experiment] <em>El Hg</em> Experiens 
+            <em>Ha4</em> : Experiment <em>Cp Ld1</em> Ex(per)iment <em>La</em> : 
+            Eriment <em>ed2013</em> Eryment <em>Ra2</em> <span class="fragment visible">(abbreviation loss)</span></p>
+            <p class="fragment current-visible" style="text-align: left;">You really need that note, proving Damon right again.</p>
+          </section>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Other kinds of apparatus (9)
+            * There can be apparatuses for sources, parallels, re-use. 
+            * The name of TC is “Critical Apparatus” after all, but should we make an effort to explain how to do other apparatus types?
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## What’s to be done?
+            * Open a bunch of [GitHub issues](https://github.com/TEIC/TEI/issues/2749).
+            * (Probably) form a working group to draft revisions.
+              * Gather examples and best practices from the many TEI critical editions created in the last few decades.
+          </textarea>
+        </section>
+        <section data-markdown data-visibility="hidden">
+          <textarea data-template>
+            ## Some suggested reading
+            * https://digitallatin.github.io/guidelines/LDLT-Guidelines.html
+            * https://frankensteinvariorum.org/method
+            * Suggestions?
+          </textarea>
+        </section>
+
+      </div>
+    </div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+        slideNumber: "c/t"
+			});
+		</script>
+	</body>
+</html>
